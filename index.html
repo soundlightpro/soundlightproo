@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noleggio Audio, Luci e Macchina del Fumo — Bologna | SoundLight Pro</title>
+  <meta name="description" content="Noleggio professionale impianti audio RCF, luci LED moving head e macchina del fumo per feste, compleanni, lauree ed eventi a Bologna. Da 50€." />
+  <meta name="keywords" content="noleggio audio Bologna, noleggio luci eventi, macchina del fumo noleggio, impianto audio festa, noleggio RCF Bologna" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.soundlightpro.it" />
+  <meta property="og:title" content="Noleggio Audio, Luci e Macchina del Fumo — Bologna" />
+  <meta property="og:description" content="Soluzioni professionali per feste ed eventi a Bologna. Audio RCF, luci LED, macchina del fumo. Da 50€." />
+  <meta property="og:type" content="website" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SoundLight Pro",
+    "description": "Noleggio impianti audio, luci e macchina del fumo per eventi privati a Bologna",
+    "telephone": "+39-392-055-9059",
+    "email": "soundlightproo@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Bologna", "addressCountry": "IT" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 44.4949, "longitude": 11.3426 },
+    "areaServed": "Bologna e provincia",
+    "priceRange": "€€",
+    "openingHours": "Mo-Su 09:00-20:00"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold:       #c9933a;
+      --gold-light: #e8b860;
+      --gold-dim:   rgba(201,147,58,0.12);
+      --bg-900:     #080810;
+      --bg-800:     #0e0e18;
+      --bg-700:     #161622;
+      --bg-600:     #1e1e2e;
+      --text-100:   #f0f0f8;
+      --text-300:   #a0a0c0;
+      --text-500:   #505070;
+      --radius:     14px;
+      --font-disp:  'Cormorant Garamond', serif;
+      --font-body:  'Outfit', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg-900); color: var(--text-100); font-family: var(--font-body); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg-900); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .text-gold { background: linear-gradient(135deg, var(--gold), var(--gold-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; background: var(--gold-dim); color: var(--gold-light); border: 1px solid rgba(201,147,58,0.25); }
+    .gold-line { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .btn-gold { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #07070f; font-family: var(--font-body); font-weight: 700; font-size: 15px; border: none; cursor: pointer; transition: transform .2s, box-shadow .2s; box-shadow: 0 6px 28px rgba(201,147,58,0.3); }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(201,147,58,0.45); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; border-radius: 50px; background: transparent; color: var(--text-100); font-family: var(--font-body); font-weight: 500; font-size: 15px; border: 1px solid rgba(255,255,255,0.14); cursor: pointer; transition: border-color .2s, color .2s; }
+    .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+    @keyframes fadeUp   { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+    @keyframes pulse    { 0%,100%{opacity:1;} 50%{opacity:.4;} }
+    @keyframes float    { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+    @keyframes slideUp  { from{transform:translateY(100%);opacity:0;} to{transform:translateY(0);opacity:1;} }
+
+    .fade-up { opacity: 0; animation: fadeUp .7s ease forwards; }
+    .d1 { animation-delay:.1s; } .d2 { animation-delay:.2s; } .d3 { animation-delay:.3s; } .d4 { animation-delay:.4s; }
+
+    /* NAVBAR */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 20px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background .3s, backdrop-filter .3s, box-shadow .3s;
+    }
+    #navbar.scrolled { background: rgba(8,8,16,0.93); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(255,255,255,0.06); }
+    .nav-logo { font-family: var(--font-disp); font-size: 22px; font-weight: 700; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-300); transition: color .2s; position: relative; }
+    .nav-links a::after { content:''; position:absolute; bottom:-2px; left:0; right:0; height:1px; background:var(--gold); transform:scaleX(0); transition:transform .25s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { transform:scaleX(1); }
+    .nav-cta { padding: 9px 22px; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #07070f !important; font-weight: 700; font-size: 14px; transition: transform .2s, box-shadow .2s; }
+    .nav-cta:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(201,147,58,0.4); }
+    .nav-cta::after { display: none !important; }
+    #ham { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    #ham span { display:block; width:22px; height:2px; background:var(--text-100); border-radius:2px; transition:.3s; }
+    #ham.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+    #ham.open span:nth-child(2) { opacity:0; }
+    #ham.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+    #mobile-menu { display:none; position:fixed; top:64px; left:0; right:0; background:rgba(8,8,16,0.97); backdrop-filter:blur(14px); padding:20px; z-index:99; border-bottom:1px solid rgba(255,255,255,0.06); }
+    #mobile-menu.open { display:flex; flex-direction:column; gap:0; }
+    #mobile-menu a { padding:14px 0; font-size:17px; font-weight:500; color:var(--text-300); border-bottom:1px solid rgba(255,255,255,0.05); transition:color .2s; }
+    #mobile-menu a:hover { color:#fff; }
+    #mobile-menu .mob-cta { margin-top:16px; text-align:center; padding:14px; border-radius:12px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:#07070f; font-weight:700; border:none; }
+
+    /* HERO */
+    #home {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding: 96px 20px 60px; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,147,58,0.09) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 15% 80%, rgba(80,40,160,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 85% 70%, rgba(201,147,58,0.05) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position:absolute; inset:0; z-index:0; opacity:.04;
+      background-image: linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content { position:relative; z-index:1; max-width:820px; margin:0 auto; }
+    .hero-content .badge { margin-bottom: 28px; }
+    .hero-title { font-family: var(--font-disp); font-size: clamp(38px,7vw,78px); font-weight: 700; line-height: 1.08; margin-bottom: 22px; color: #fff; }
+    .hero-sub { font-size: clamp(16px,2.5vw,19px); color: var(--text-300); max-width: 560px; margin: 0 auto 36px; font-weight: 300; line-height: 1.7; }
+    .hero-sub strong { color: var(--text-100); font-weight: 500; }
+    .hero-btns { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:56px; }
+    .hero-stats { display:flex; justify-content:center; gap:48px; flex-wrap:wrap; }
+    .stat-val { font-family:var(--font-disp); font-size:32px; font-weight:700; }
+    .stat-lbl { font-size:12px; color:var(--text-500); margin-top:2px; }
+    .scroll-hint { position:absolute; bottom:28px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; opacity:.3; }
+    .scroll-wheel { width:20px; height:32px; border:1.5px solid var(--text-300); border-radius:12px; display:flex; justify-content:center; padding-top:6px; }
+    .scroll-dot { width:3px; height:6px; border-radius:3px; background:var(--text-300); animation:float 1.8s ease-in-out infinite; }
+
+    /* SECTIONS */
+    section { padding: 96px 0; }
+    .sec-header { text-align:center; margin-bottom:60px; }
+    .sec-title { font-family:var(--font-disp); font-size:clamp(30px,5vw,52px); font-weight:700; color:#fff; margin-top:14px; line-height:1.1; }
+    .sec-sub { color:var(--text-300); font-size:17px; margin-top:12px; max-width:520px; margin-left:auto; margin-right:auto; }
+
+    /* SERVICES */
+    #servizi { background: var(--bg-800); }
+    .cards-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:22px; }
+    .card {
+      border-radius:var(--radius); border:1px solid rgba(255,255,255,0.07);
+      background:var(--bg-700); overflow:hidden;
+      display:flex; flex-direction:column;
+      transition:transform .3s, box-shadow .3s;
+    }
+    .card:hover { transform:translateY(-6px); box-shadow:0 20px 60px rgba(0,0,0,0.4); }
+    .card.featured { border-color:rgba(201,147,58,0.45); background:linear-gradient(160deg,#1a1a28,#141420); }
+    .card-ribbon { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; text-align:center; padding:8px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:#07070f; }
+    .card-img {
+      height:200px; display:flex; align-items:center; justify-content:center;
+      position:relative; overflow:hidden; background: var(--bg-800);
+    }
+    .card-img img { width:100%; height:100%; object-fit:cover; object-position:center; }
+    .card-img-placeholder {
+      position:absolute; inset:0; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:8px;
+    }
+    .card-img-placeholder .ph-icon { font-size:44px; animation:float 3s ease-in-out infinite; }
+    .card-img-placeholder .ph-text { font-size:11px; color:var(--text-500); }
+    .card-body { padding:24px; flex:1; display:flex; flex-direction:column; }
+    .card-title { font-family:var(--font-disp); font-size:22px; font-weight:700; color:#fff; margin-bottom:8px; }
+    .card-desc { font-size:14px; color:var(--text-300); margin-bottom:18px; line-height:1.7; }
+    .card-price { display:flex; align-items:baseline; gap:8px; margin-bottom:20px; }
+    .price-val { font-family:var(--font-disp); font-size:36px; font-weight:700; }
+    .price-lbl { font-size:13px; color:var(--text-500); }
+    .card-includes { margin-bottom:24px; flex:1; display:flex; flex-direction:column; gap:9px; }
+    .inc-item { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--text-300); }
+    .inc-check { font-size:13px; flex-shrink:0; margin-top:1px; color:var(--gold); }
+    .card-btn { display:block; text-align:center; padding:13px; border-radius:10px; font-weight:600; font-size:14px; transition:.2s; border:1px solid rgba(255,255,255,0.1); color:var(--text-100); }
+    .card-btn:hover { border-color:var(--gold); color:var(--gold-light); }
+    .card.featured .card-btn { background:linear-gradient(135deg,var(--gold),var(--gold-light)); border:none; color:#07070f; }
+    .card.featured .card-btn:hover { box-shadow:0 6px 20px rgba(201,147,58,0.35); }
+
+    /* HOW IT WORKS */
+    #come-funziona { background: var(--bg-900); }
+    .steps-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .step {
+      padding:28px 24px; border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.06); background:var(--bg-700);
+      position:relative; overflow:hidden;
+    }
+    .step::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0; transition:opacity .3s; }
+    .step:hover::before { opacity:1; }
+    .step-num { font-family:var(--font-disp); font-size:52px; font-weight:700; color:var(--gold); opacity:.12; line-height:1; margin-bottom:8px; }
+    .step-icon { font-size:28px; margin-bottom:12px; }
+    .step-title { font-weight:600; font-size:16px; color:#fff; margin-bottom:8px; }
+    .step-desc { font-size:13px; color:var(--text-300); line-height:1.65; }
+
+    /* CONTATTI */
+    #contatti { background: var(--bg-800); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:700px; margin:0 auto; }
+    .contact-card {
+      display:flex; flex-direction:column; align-items:center; text-align:center;
+      padding:36px 28px; border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.07); background:var(--bg-700);
+      transition:transform .3s, box-shadow .3s;
+    }
+    .contact-card:hover { transform:translateY(-4px); box-shadow:0 16px 48px rgba(0,0,0,0.35); }
+    .contact-card.featured { border-color:rgba(201,147,58,0.4); background:linear-gradient(160deg,#1a1a28,#141420); }
+    .contact-icon { font-size:40px; margin-bottom:16px; }
+    .contact-label { font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--text-500); margin-bottom:8px; }
+    .contact-value { font-family:var(--font-disp); font-size:22px; font-weight:700; color:#fff; margin-bottom:18px; line-height:1.2; }
+    .contact-action { display:inline-flex; align-items:center; gap:8px; padding:11px 24px; border-radius:50px; font-weight:600; font-size:14px; transition:.2s; }
+    .contact-action.phone { background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:#07070f; }
+    .contact-action.phone:hover { transform:scale(1.05); box-shadow:0 6px 20px rgba(201,147,58,0.4); }
+    .contact-action.email { border:1px solid rgba(255,255,255,0.15); color:var(--text-100); }
+    .contact-action.email:hover { border-color:var(--gold); color:var(--gold-light); }
+    .contact-note { font-size:13px; color:var(--text-500); margin-top:12px; }
+
+    /* FOOTER */
+    footer { background: var(--bg-900); padding:60px 0 30px; }
+    .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; margin-bottom:48px; }
+    .footer-brand { font-family:var(--font-disp); font-size:24px; font-weight:700; margin-bottom:12px; }
+    .footer-tagline { font-size:14px; color:var(--text-500); line-height:1.7; margin-bottom:20px; }
+    .wa-btn { display:inline-flex; align-items:center; gap:8px; padding:10px 20px; border-radius:10px; background:#25D366; color:#fff; font-weight:600; font-size:14px; transition:filter .2s; }
+    .wa-btn:hover { filter:brightness(1.1); }
+    .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-500); margin-bottom:16px; }
+    .footer-col ul li { margin-bottom:10px; }
+    .footer-col ul li a { font-size:14px; color:var(--text-300); transition:color .2s; }
+    .footer-col ul li a:hover { color:var(--gold-light); }
+    .footer-col ul li span { font-size:14px; color:var(--text-300); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding-top:24px; }
+    .footer-bottom p { font-size:12px; color:var(--text-500); }
+
+    /* COOKIE BANNER */
+    #cookie-banner {
+      display:none; position:fixed; bottom:0; left:0; right:0; z-index:200;
+      padding:18px 20px;
+      background:rgba(14,14,24,0.97); backdrop-filter:blur(16px);
+      border-top:1px solid rgba(201,147,58,0.2);
+      animation:slideUp .4s ease forwards;
+    }
+    #cookie-banner.show { display:flex; }
+    .cookie-inner { max-width:1100px; margin:0 auto; width:100%; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    .cookie-text { font-size:13px; color:var(--text-300); flex:1; line-height:1.6; }
+    .cookie-text a { color:var(--gold-light); text-decoration:underline; }
+    .cookie-btns { display:flex; gap:10px; flex-shrink:0; }
+    .cookie-decline { padding:9px 18px; border-radius:8px; border:1px solid rgba(255,255,255,0.12); background:none; color:var(--text-300); font-family:var(--font-body); font-size:13px; cursor:pointer; transition:.2s; }
+    .cookie-decline:hover { border-color:rgba(255,255,255,0.3); color:#fff; }
+    .cookie-accept { padding:9px 20px; border-radius:8px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:#07070f; font-family:var(--font-body); font-weight:700; font-size:13px; border:none; cursor:pointer; transition:transform .2s; }
+    .cookie-accept:hover { transform:scale(1.03); }
+
+    /* LEGAL PAGES */
+    .legal-page { display:none; position:fixed; inset:0; z-index:300; background:var(--bg-900); overflow-y:auto; padding:80px 20px 60px; }
+    .legal-page.active { display:block; }
+    .legal-header { position:fixed; top:0; left:0; right:0; height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; background:var(--bg-900); border-bottom:1px solid rgba(255,255,255,0.06); z-index:10; }
+    .legal-close { background:none; border:1px solid rgba(255,255,255,0.12); color:var(--text-300); padding:7px 18px; border-radius:8px; font-family:var(--font-body); font-size:13px; cursor:pointer; transition:.2s; }
+    .legal-close:hover { color:#fff; border-color:rgba(255,255,255,0.3); }
+    .legal-content { max-width:760px; margin:0 auto; padding-top:16px; }
+    .legal-content h1 { font-family:var(--font-disp); font-size:36px; font-weight:700; color:#fff; margin-bottom:6px; }
+    .legal-content .updated { font-size:12px; color:var(--text-500); margin-bottom:36px; }
+    .legal-content h2 { font-family:var(--font-disp); font-size:20px; font-weight:700; color:#fff; margin:32px 0 10px; }
+    .legal-content p, .legal-content li { font-size:15px; color:var(--text-300); line-height:1.8; }
+    .legal-content ul { padding-left:20px; list-style:disc; margin-top:8px; }
+    .legal-content ul li { margin-bottom:6px; }
+    .legal-content .info-box { background:var(--bg-700); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:20px; margin:12px 0; }
+    .legal-content table { width:100%; border-collapse:collapse; margin-top:12px; font-size:14px; }
+    .legal-content th { background:var(--bg-700); padding:12px 16px; text-align:left; color:var(--text-300); font-weight:600; }
+    .legal-content td { padding:12px 16px; border-top:1px solid rgba(255,255,255,0.05); color:var(--text-300); }
+    .legal-content .gold-code { color:var(--gold-light); font-family:monospace; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display:none; }
+      #ham { display:flex; }
+      .footer-grid { grid-template-columns:1fr; gap:28px; }
+      .hero-stats { gap:24px; }
+      .footer-bottom { flex-direction:column; text-align:center; }
+      .contact-grid { grid-template-columns:1fr; max-width:380px; }
+    }
+    @media (max-width:480px) {
+      .hero-btns { flex-direction:column; align-items:center; }
+      .btn-gold, .btn-outline { width:100%; justify-content:center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo text-gold">SoundLight Pro</a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#come-funziona">Come funziona</a>
+    <a href="#contatti">Contatti</a>
+    <a href="tel:+393920559059" style="color:var(--gold-light);">📞 392 055 9059</a>
+    <a href="#contatti" class="nav-cta">Contattaci</a>
+  </div>
+  <button id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-menu">
+  <a href="#home" onclick="closeMobileMenu()">Home</a>
+  <a href="#servizi" onclick="closeMobileMenu()">Servizi</a>
+  <a href="#come-funziona" onclick="closeMobileMenu()">Come funziona</a>
+  <a href="#contatti" onclick="closeMobileMenu()">Contatti</a>
+  <a href="tel:+393920559059" onclick="closeMobileMenu()">📞 392 055 9059</a>
+  <a href="#contatti" class="mob-cta" onclick="closeMobileMenu()">Contattaci ora</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="badge fade-up">🎵 Noleggio Professionale — Bologna e Dintorni</div>
+    <h1 class="hero-title fade-up d1">
+      Noleggio Impianti <span class="text-gold">Audio, Luci</span><br>e Macchina del Fumo
+    </h1>
+    <p class="hero-sub fade-up d2">
+      Soluzioni professionali per feste, compleanni, lauree e serate.<br>
+      <strong>Prezzi chiari, zero sorprese.</strong>
+    </p>
+    <div class="hero-btns fade-up d3">
+      <a href="tel:+393920559059" class="btn-gold">📞 Chiamaci ora</a>
+      <a href="#servizi" class="btn-outline">Scopri i servizi →</a>
+    </div>
+    <div class="hero-stats fade-up d4">
+      <div>
+        <div class="stat-val text-gold">50+</div>
+        <div class="stat-lbl">Eventi realizzati</div>
+      </div>
+      <div>
+        <div class="stat-val text-gold">5 ★</div>
+        <div class="stat-lbl">Valutazione media</div>
+      </div>
+      <div>
+        <div class="stat-val text-gold">24h</div>
+        <div class="stat-lbl">Risposta garantita</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-wheel"><div class="scroll-dot"></div></div>
+  </div>
+</section>
+
+<!-- SERVIZI -->
+<section id="servizi">
+  <div class="container">
+    <div class="sec-header">
+      <span class="badge">I Nostri Servizi</span>
+      <h2 class="sec-title">Scegli il tuo <span class="text-gold">pacchetto</span></h2>
+      <p class="sec-sub">Prezzi chiari, tutto incluso. Zero sorprese, solo musica e divertimento.</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Card Audio -->
+      <div class="card">
+        <div class="card-img" style="background:radial-gradient(ellipse at center,rgba(201,147,58,0.07) 0%,transparent 70%)">
+          <svg width="160" height="130" viewBox="0 0 160 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="14" width="54" height="102" rx="7" fill="#13131f" stroke="rgba(201,147,58,0.35)" stroke-width="1.5"/>
+            <circle cx="39" cy="78" r="27" fill="#0d0d18" stroke="rgba(201,147,58,0.22)" stroke-width="1.5"/>
+            <circle cx="39" cy="78" r="17" fill="#080810" stroke="rgba(201,147,58,0.15)" stroke-width="1"/>
+            <circle cx="39" cy="78" r="6" fill="rgba(201,147,58,0.25)"/>
+            <rect x="22" y="22" width="30" height="18" rx="4" fill="#0d0d18" stroke="rgba(201,147,58,0.18)" stroke-width="1"/>
+            <rect x="94" y="14" width="54" height="102" rx="7" fill="#13131f" stroke="rgba(201,147,58,0.35)" stroke-width="1.5"/>
+            <circle cx="121" cy="78" r="27" fill="#0d0d18" stroke="rgba(201,147,58,0.22)" stroke-width="1.5"/>
+            <circle cx="121" cy="78" r="17" fill="#080810" stroke="rgba(201,147,58,0.15)" stroke-width="1"/>
+            <circle cx="121" cy="78" r="6" fill="rgba(201,147,58,0.25)"/>
+            <rect x="104" y="22" width="30" height="18" rx="4" fill="#0d0d18" stroke="rgba(201,147,58,0.18)" stroke-width="1"/>
+            <text x="80" y="126" text-anchor="middle" font-size="8" fill="rgba(201,147,58,0.3)" font-family="monospace">RCF ART 712-A MK</text>
+          </svg>
+        </div>
+
+      <!-- Card Luci -->
+      <div class="card">
+        <div class="card-img" style="background:radial-gradient(ellipse at center,rgba(110,50,220,0.1) 0%,transparent 70%)">
+          <svg width="200" height="130" viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="72" y="82" width="56" height="26" rx="5" fill="#13131f" stroke="rgba(150,80,255,0.4)" stroke-width="1.5"/>
+            <rect x="82" y="108" width="36" height="12" rx="3" fill="#0d0d18" stroke="rgba(150,80,255,0.25)" stroke-width="1"/>
+            <rect x="88" y="120" width="24" height="8" rx="2" fill="#080810"/>
+            <ellipse cx="100" cy="68" rx="28" ry="24" fill="#0d0d18" stroke="rgba(150,80,255,0.5)" stroke-width="1.5"/>
+            <circle cx="100" cy="56" r="5" fill="rgba(200,120,255,0.85)"/>
+            <circle cx="88"  cy="63" r="5" fill="rgba(80,140,255,0.85)"/>
+            <circle cx="112" cy="63" r="5" fill="rgba(255,80,180,0.85)"/>
+            <circle cx="84"  cy="76" r="5" fill="rgba(80,255,180,0.85)"/>
+            <circle cx="116" cy="76" r="5" fill="rgba(255,210,60,0.85)"/>
+            <circle cx="93"  cy="82" r="5" fill="rgba(150,80,255,0.85)"/>
+            <circle cx="107" cy="82" r="5" fill="rgba(80,200,255,0.85)"/>
+            <line x1="82"  y1="46" x2="20"  y2="4"  stroke="rgba(200,120,255,0.18)" stroke-width="12" stroke-linecap="round"/>
+            <line x1="90"  y1="44" x2="55"  y2="2"  stroke="rgba(80,140,255,0.15)"  stroke-width="9"  stroke-linecap="round"/>
+            <line x1="100" y1="44" x2="100" y2="2"  stroke="rgba(255,255,255,0.12)" stroke-width="8"  stroke-linecap="round"/>
+            <line x1="110" y1="44" x2="145" y2="2"  stroke="rgba(255,80,180,0.15)"  stroke-width="9"  stroke-linecap="round"/>
+            <line x1="118" y1="46" x2="180" y2="4"  stroke="rgba(80,255,180,0.18)"  stroke-width="12" stroke-linecap="round"/>
+            <ellipse cx="100" cy="68" rx="32" ry="28" fill="none" stroke="rgba(150,80,255,0.12)" stroke-width="6"/>
+          </svg>
+        </div>
+
+      <!-- Card Combo — FEATURED -->
+      <div class="card featured">
+        <div class="card-ribbon">⭐ Più scelto</div>
+        <div class="card-img" style="background:radial-gradient(ellipse at center,rgba(201,147,58,0.07) 0%,transparent 70%)">
+          <svg width="260" height="130" viewBox="0 0 260 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Speaker left -->
+            <rect x="6" y="22" width="42" height="96" rx="6" fill="#13131f" stroke="rgba(201,147,58,0.35)" stroke-width="1.5"/>
+            <circle cx="27" cy="80" r="20" fill="#0d0d18" stroke="rgba(201,147,58,0.22)" stroke-width="1.5"/>
+            <circle cx="27" cy="80" r="12" fill="#080810" stroke="rgba(201,147,58,0.15)" stroke-width="1"/>
+            <circle cx="27" cy="80" r="4"  fill="rgba(201,147,58,0.3)"/>
+            <rect x="14" y="28" width="22" height="14" rx="3" fill="#0d0d18" stroke="rgba(201,147,58,0.18)" stroke-width="1"/>
+            <!-- Moving head centre -->
+            <rect x="97" y="84" width="46" height="22" rx="5" fill="#13131f" stroke="rgba(150,80,255,0.4)" stroke-width="1.5"/>
+            <rect x="105" y="106" width="30" height="10" rx="3" fill="#0d0d18" stroke="rgba(150,80,255,0.25)" stroke-width="1"/>
+            <ellipse cx="120" cy="72" rx="24" ry="20" fill="#0d0d18" stroke="rgba(150,80,255,0.5)" stroke-width="1.5"/>
+            <circle cx="120" cy="62"  r="4" fill="rgba(200,120,255,0.9)"/>
+            <circle cx="110" cy="68"  r="4" fill="rgba(80,140,255,0.9)"/>
+            <circle cx="130" cy="68"  r="4" fill="rgba(255,80,180,0.9)"/>
+            <circle cx="111" cy="79"  r="4" fill="rgba(80,255,180,0.9)"/>
+            <circle cx="129" cy="79"  r="4" fill="rgba(255,210,60,0.9)"/>
+            <circle cx="120" cy="84"  r="4" fill="rgba(150,80,255,0.9)"/>
+            <!-- Beams from moving head -->
+            <line x1="104" y1="52" x2="70"  y2="8"  stroke="rgba(200,120,255,0.15)" stroke-width="10" stroke-linecap="round"/>
+            <line x1="120" y1="52" x2="120" y2="4"  stroke="rgba(255,255,255,0.1)"  stroke-width="8"  stroke-linecap="round"/>
+            <line x1="136" y1="52" x2="170" y2="8"  stroke="rgba(255,80,180,0.15)"  stroke-width="10" stroke-linecap="round"/>
+            <!-- Fogger right -->
+            <rect x="180" y="50" width="72" height="46" rx="6" fill="#15151f" stroke="rgba(80,180,255,0.35)" stroke-width="1.5"/>
+            <rect x="180" y="62" width="8"  height="22" rx="3" fill="#0d0d18" stroke="rgba(80,180,255,0.2)" stroke-width="1"/>
+            <circle cx="243" cy="73" r="16" fill="#0d0d18" stroke="rgba(80,180,255,0.3)" stroke-width="1.5"/>
+            <circle cx="243" cy="73" r="9"  fill="#080810" stroke="rgba(80,180,255,0.2)" stroke-width="1"/>
+            <circle cx="190" cy="60" r="4"  fill="rgba(80,180,255,0.7)"/>
+            <circle cx="190" cy="86" r="4"  fill="rgba(100,255,220,0.7)"/>
+            <circle cx="200" cy="73" r="4"  fill="rgba(150,80,255,0.7)"/>
+            <!-- Fog stream -->
+            <ellipse cx="252" cy="73" rx="18" ry="7" fill="rgba(255,255,255,0.06)"/>
+            <ellipse cx="258" cy="73" rx="10" ry="4" fill="rgba(255,255,255,0.04)"/>
+          </svg>
+        </div>
+
+    </div>
+    <p style="text-align:center;font-size:13px;color:var(--text-500);margin-top:24px;">* Prezzi indicativi. Il preventivo definitivo può variare in base a luogo e distanza.</p>
+  </div>
+</section>
+
+<!-- COME FUNZIONA -->
+<section id="come-funziona">
+  <div class="container">
+    <div class="sec-header">
+      <span class="badge">Come funziona</span>
+      <h2 class="sec-title">Semplice e <span class="text-gold">veloce</span></h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-icon">📞</div>
+        <div class="step-title">Chiamaci o scrivici</div>
+        <p class="step-desc">Contattaci per raccontarci del tuo evento: data, luogo e cosa ti serve.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-icon">💬</div>
+        <div class="step-title">Preventivo gratuito</div>
+        <p class="step-desc">Ti risponderemo rapidamente con un preventivo personalizzato e senza impegno.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-icon">✅</div>
+        <div class="step-title">Conferma la data</div>
+        <p class="step-desc">Una volta d'accordo, blocchiamo la data per te. Semplice e veloce.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-icon">🎉</div>
+        <div class="step-title">Buona festa!</div>
+        <p class="step-desc">Il giorno dell'evento troverai tutto pronto. Tu divertiti, pensiamo noi al resto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti">
+  <div class="container">
+    <div class="sec-header">
+      <span class="badge">Contatti</span>
+      <h2 class="sec-title">Scrivici o <span class="text-gold">chiamaci</span></h2>
+      <p class="sec-sub">Siamo disponibili tutti i giorni. Rispondiamo sempre entro 24 ore.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card featured">
+        <div class="contact-icon">📱</div>
+        <div class="contact-label">Telefono &amp; WhatsApp</div>
+        <div class="contact-value">392 055 9059</div>
+        <a href="tel:+393920559059" class="contact-action phone">Chiama ora</a>
+        <p class="contact-note">Disponibile lun–dom, 9:00–20:00</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value" style="font-size:17px;">soundlightproo@gmail.com</div>
+        <a href="mailto:soundlightproo@gmail.com" class="contact-action email">Invia email</a>
+        <p class="contact-note">Risposta entro 24 ore</p>
+      </div>
+
+    </div>
+
+    <!-- WhatsApp CTA -->
+    <div style="text-align:center;margin-top:32px;">
+      <a href="https://wa.me/393920559059" target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:50px;background:#25D366;color:#fff;font-weight:700;font-size:15px;transition:filter .2s;box-shadow:0 6px 24px rgba(37,211,102,0.3);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Scrivici su WhatsApp
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="gold-line"></div>
+  <div class="container">
+    <div class="footer-grid" style="margin-top:48px;">
+      <div>
+        <div class="footer-brand text-gold">SoundLight Pro</div>
+        <p class="footer-tagline">Noleggio professionale di impianti audio, luci e macchina del fumo per eventi privati a Bologna e dintorni.</p>
+        <a href="https://wa.me/393920559059" target="_blank" rel="noopener noreferrer" class="wa-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <ul>
+          <li><a href="tel:+393920559059">📱 392 055 9059</a></li>
+          <li><a href="mailto:soundlightproo@gmail.com">✉️ soundlightproo@gmail.com</a></li>
+          <li><span>📍 Bologna e dintorni</span></li>
+          <li><span>🕐 Lun–Dom 9:00–20:00</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Link utili</h4>
+        <ul>
+          <li><a href="#servizi">I nostri servizi</a></li>
+          <li><a href="#contatti">Contattaci</a></li>
+          <li><a href="#" onclick="openPrivacy(event)">Privacy Policy</a></li>
+          <li><a href="#" onclick="openCookie(event)">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="gold-line"></div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> SoundLight Pro — Tutti i diritti riservati</p>
+      <p>Bologna, Italia</p>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <div class="cookie-inner">
+    <p class="cookie-text">
+      🍪 Usiamo solo cookie tecnici essenziali per il funzionamento del sito. Nessun tracciamento.
+      <a href="#" onclick="openCookie(event)">Cookie Policy</a>
+    </p>
+    <div class="cookie-btns">
+      <button class="cookie-decline" onclick="cookieDecline()">Rifiuta</button>
+      <button class="cookie-accept" onclick="cookieAccept()">Accetta</button>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div id="page-privacy" class="legal-page">
+  <div class="legal-header">
+    <span class="nav-logo text-gold">SoundLight Pro</span>
+    <button class="legal-close" onclick="closePrivacy()">← Torna al sito</button>
+  </div>
+  <div class="legal-content">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Ultimo aggiornamento: Giugno 2025</p>
+    <h2>1. Titolare del Trattamento</h2>
+    <div class="info-box">
+      <strong>SoundLight Pro</strong><br>
+      Bologna, Italia<br>
+      Telefono: <a href="tel:+393920559059" style="color:var(--gold-light)">392 055 9059</a><br>
+      Email: <a href="mailto:soundlightproo@gmail.com" style="color:var(--gold-light)">soundlightproo@gmail.com</a>
+    </div>
+    <h2>2. Dati Raccolti</h2>
+    <p>Questo sito non raccoglie dati personali tramite moduli online. I clienti ci contattano direttamente via telefono o email. Non raccogliamo dati di navigazione né installiamo cookie di profilazione o tracciamento pubblicitario.</p>
+    <h2>3. Cookie</h2>
+    <p>Usiamo solo cookie tecnici essenziali. Vedi la <a href="#" onclick="closePrivacy();setTimeout(openCookieFn,100);" style="color:var(--gold-light)">Cookie Policy</a> per i dettagli.</p>
+    <h2>4. Diritti dell'Interessato</h2>
+    <p>Ai sensi del GDPR, puoi richiedere informazioni sul trattamento dei tuoi dati scrivendo a: <a href="mailto:soundlightproo@gmail.com" style="color:var(--gold-light)">soundlightproo@gmail.com</a></p>
+    <h2>5. Reclami</h2>
+    <p>Hai il diritto di proporre reclamo al Garante: <a href="https://www.garanteprivacy.it" target="_blank" style="color:var(--gold-light)">garanteprivacy.it</a></p>
+  </div>
+</div>
+
+<!-- COOKIE POLICY -->
+<div id="page-cookie" class="legal-page">
+  <div class="legal-header">
+    <span class="nav-logo text-gold">SoundLight Pro</span>
+    <button class="legal-close" onclick="closeCookie()">← Torna al sito</button>
+  </div>
+  <div class="legal-content">
+    <h1>Cookie Policy</h1>
+    <p class="updated">Ultimo aggiornamento: Giugno 2025</p>
+    <h2>Cosa sono i cookie?</h2>
+    <p>I cookie sono piccoli file di testo salvati nel browser quando visiti un sito web.</p>
+    <h2>Cookie utilizzati da questo sito</h2>
+    <p>Questo sito utilizza esclusivamente <strong>cookie tecnici essenziali</strong>. Nessun cookie pubblicitario o di tracciamento.</p>
+    <table>
+      <thead><tr><th>Nome</th><th>Tipo</th><th>Durata</th><th>Finalità</th></tr></thead>
+      <tbody>
+        <tr><td><span class="gold-code">cookie-consent</span></td><td>Tecnico</td><td>1 anno</td><td>Memorizza la preferenza sul banner cookie</td></tr>
+      </tbody>
+    </table>
+    <h2>Come gestire i cookie</h2>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" style="color:var(--gold-light)">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/it/kb/Gestione%20dei%20cookie" target="_blank" style="color:var(--gold-light)">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" style="color:var(--gold-light)">Apple Safari</a></li>
+      <li><a href="https://support.microsoft.com/it-it/microsoft-edge" target="_blank" style="color:var(--gold-light)">Microsoft Edge</a></li>
+    </ul>
+    <h2>Contatti</h2>
+    <p>Per domande: <a href="mailto:soundlightproo@gmail.com" style="color:var(--gold-light)">soundlightproo@gmail.com</a></p>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  const ham = document.getElementById('ham');
+  const mobileMenu = document.getElementById('mobile-menu');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobileMenu() {
+    ham.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+
+  (function() {
+    if (!localStorage.getItem('cookie-consent')) {
+      setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 1200);
+    }
+  })();
+  function cookieAccept() {
+    localStorage.setItem('cookie-consent', 'accepted');
+    document.getElementById('cookie-banner').classList.remove('show');
+  }
+  function cookieDecline() {
+    localStorage.setItem('cookie-consent', 'declined');
+    document.getElementById('cookie-banner').classList.remove('show');
+  }
+
+  function openPrivacy(e) { if(e) e.preventDefault(); document.getElementById('page-privacy').classList.add('active'); document.body.style.overflow='hidden'; }
+  function closePrivacy() { document.getElementById('page-privacy').classList.remove('active'); document.body.style.overflow=''; }
+  function openCookieFn() { document.getElementById('page-cookie').classList.add('active'); document.body.style.overflow='hidden'; }
+  function openCookie(e) { if(e) e.preventDefault(); openCookieFn(); }
+  function closeCookie() { document.getElementById('page-cookie').classList.remove('active'); document.body.style.overflow=''; }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.card, .step, .contact-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.animation = 'fadeUp .6s ease forwards paused';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
