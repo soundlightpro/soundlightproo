@@ -149,17 +149,7 @@
     .card:hover { transform:translateY(-6px); box-shadow:0 20px 60px rgba(0,0,0,0.4); }
     .card.featured { border-color:rgba(201,147,58,0.45); background:linear-gradient(160deg,#1a1a28,#141420); }
     .card-ribbon { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; text-align:center; padding:8px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:#07070f; }
-    .card-img {
-      height:200px; display:flex; align-items:center; justify-content:center;
-      position:relative; overflow:hidden; background: var(--bg-800);
-    }
-    .card-img img { width:100%; height:100%; object-fit:cover; object-position:center; }
-    .card-img-placeholder {
-      position:absolute; inset:0; display:flex; flex-direction:column;
-      align-items:center; justify-content:center; gap:8px;
-    }
-    .card-img-placeholder .ph-icon { font-size:44px; animation:float 3s ease-in-out infinite; }
-    .card-img-placeholder .ph-text { font-size:11px; color:var(--text-500); }
+
     .card-body { padding:24px; flex:1; display:flex; flex-direction:column; }
     .card-title { font-family:var(--font-disp); font-size:22px; font-weight:700; color:#fff; margin-bottom:8px; }
     .card-desc { font-size:14px; color:var(--text-300); margin-bottom:18px; line-height:1.7; }
@@ -354,84 +344,65 @@
 
       <!-- Card Audio -->
       <div class="card">
-        <div class="card-img" style="background:radial-gradient(ellipse at center,rgba(201,147,58,0.07) 0%,transparent 70%)">
-          <svg width="160" height="130" viewBox="0 0 160 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="12" y="14" width="54" height="102" rx="7" fill="#13131f" stroke="rgba(201,147,58,0.35)" stroke-width="1.5"/>
-            <circle cx="39" cy="78" r="27" fill="#0d0d18" stroke="rgba(201,147,58,0.22)" stroke-width="1.5"/>
-            <circle cx="39" cy="78" r="17" fill="#080810" stroke="rgba(201,147,58,0.15)" stroke-width="1"/>
-            <circle cx="39" cy="78" r="6" fill="rgba(201,147,58,0.25)"/>
-            <rect x="22" y="22" width="30" height="18" rx="4" fill="#0d0d18" stroke="rgba(201,147,58,0.18)" stroke-width="1"/>
-            <rect x="94" y="14" width="54" height="102" rx="7" fill="#13131f" stroke="rgba(201,147,58,0.35)" stroke-width="1.5"/>
-            <circle cx="121" cy="78" r="27" fill="#0d0d18" stroke="rgba(201,147,58,0.22)" stroke-width="1.5"/>
-            <circle cx="121" cy="78" r="17" fill="#080810" stroke="rgba(201,147,58,0.15)" stroke-width="1"/>
-            <circle cx="121" cy="78" r="6" fill="rgba(201,147,58,0.25)"/>
-            <rect x="104" y="22" width="30" height="18" rx="4" fill="#0d0d18" stroke="rgba(201,147,58,0.18)" stroke-width="1"/>
-            <text x="80" y="126" text-anchor="middle" font-size="8" fill="rgba(201,147,58,0.3)" font-family="monospace">RCF ART 712-A MK</text>
-          </svg>
+
+        <div class="card-body">
+          <h3 class="card-title">Impianto Audio Completo</h3>
+          <p class="card-desc">Qualità professionale per far sentire la musica in ogni angolo del tuo evento.</p>
+          <div class="card-price">
+            <span class="price-val text-gold">120 €</span>
+            <span class="price-lbl">per una serata</span>
+          </div>
+          <ul class="card-includes">
+            <li class="inc-item"><span class="inc-check">✓</span> 2× Casse RCF Art 712-A MK (1400W totali)</li>
+            <li class="inc-item"><span class="inc-check">✓</span> Piedistalli professionali</li>
+            <li class="inc-item"><span class="inc-check">✓</span> Cablaggio completo incluso</li>
+            <li class="inc-item"><span class="inc-check">✓</span> Mixer audio</li>
+          </ul>
+          <a href="#contatti" class="card-btn">Richiedi informazioni</a>
         </div>
+      </div>
 
       <!-- Card Luci -->
       <div class="card">
-        <div class="card-img" style="background:radial-gradient(ellipse at center,rgba(110,50,220,0.1) 0%,transparent 70%)">
-          <svg width="200" height="130" viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="72" y="82" width="56" height="26" rx="5" fill="#13131f" stroke="rgba(150,80,255,0.4)" stroke-width="1.5"/>
-            <rect x="82" y="108" width="36" height="12" rx="3" fill="#0d0d18" stroke="rgba(150,80,255,0.25)" stroke-width="1"/>
-            <rect x="88" y="120" width="24" height="8" rx="2" fill="#080810"/>
-            <ellipse cx="100" cy="68" rx="28" ry="24" fill="#0d0d18" stroke="rgba(150,80,255,0.5)" stroke-width="1.5"/>
-            <circle cx="100" cy="56" r="5" fill="rgba(200,120,255,0.85)"/>
-            <circle cx="88"  cy="63" r="5" fill="rgba(80,140,255,0.85)"/>
-            <circle cx="112" cy="63" r="5" fill="rgba(255,80,180,0.85)"/>
-            <circle cx="84"  cy="76" r="5" fill="rgba(80,255,180,0.85)"/>
-            <circle cx="116" cy="76" r="5" fill="rgba(255,210,60,0.85)"/>
-            <circle cx="93"  cy="82" r="5" fill="rgba(150,80,255,0.85)"/>
-            <circle cx="107" cy="82" r="5" fill="rgba(80,200,255,0.85)"/>
-            <line x1="82"  y1="46" x2="20"  y2="4"  stroke="rgba(200,120,255,0.18)" stroke-width="12" stroke-linecap="round"/>
-            <line x1="90"  y1="44" x2="55"  y2="2"  stroke="rgba(80,140,255,0.15)"  stroke-width="9"  stroke-linecap="round"/>
-            <line x1="100" y1="44" x2="100" y2="2"  stroke="rgba(255,255,255,0.12)" stroke-width="8"  stroke-linecap="round"/>
-            <line x1="110" y1="44" x2="145" y2="2"  stroke="rgba(255,80,180,0.15)"  stroke-width="9"  stroke-linecap="round"/>
-            <line x1="118" y1="46" x2="180" y2="4"  stroke="rgba(80,255,180,0.18)"  stroke-width="12" stroke-linecap="round"/>
-            <ellipse cx="100" cy="68" rx="32" ry="28" fill="none" stroke="rgba(150,80,255,0.12)" stroke-width="6"/>
-          </svg>
+
+        <div class="card-body">
+          <h3 class="card-title">Luci & Macchina del Fumo</h3>
+          <p class="card-desc">Trasforma qualsiasi spazio in una vera discoteca con effetti spettacolari.</p>
+          <div class="card-price">
+            <span class="price-val text-gold">50 €</span>
+            <span class="price-lbl">per una serata</span>
+          </div>
+          <ul class="card-includes">
+            <li class="inc-item"><span class="inc-check">✓</span> 2× Moving head LED RGBW 7×12W</li>
+            <li class="inc-item"><span class="inc-check">✓</span> Macchina del fumo 1200W con LED RGB</li>
+            <li class="inc-item"><span class="inc-check">✓</span> Telecomandi wireless inclusi</li>
+            <li class="inc-item"><span class="inc-check">✓</span> Cablaggio completo</li>
+          </ul>
+          <a href="#contatti" class="card-btn">Richiedi informazioni</a>
         </div>
+      </div>
 
       <!-- Card Combo — FEATURED -->
       <div class="card featured">
         <div class="card-ribbon">⭐ Più scelto</div>
-        <div class="card-img" style="background:radial-gradient(ellipse at center,rgba(201,147,58,0.07) 0%,transparent 70%)">
-          <svg width="260" height="130" viewBox="0 0 260 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Speaker left -->
-            <rect x="6" y="22" width="42" height="96" rx="6" fill="#13131f" stroke="rgba(201,147,58,0.35)" stroke-width="1.5"/>
-            <circle cx="27" cy="80" r="20" fill="#0d0d18" stroke="rgba(201,147,58,0.22)" stroke-width="1.5"/>
-            <circle cx="27" cy="80" r="12" fill="#080810" stroke="rgba(201,147,58,0.15)" stroke-width="1"/>
-            <circle cx="27" cy="80" r="4"  fill="rgba(201,147,58,0.3)"/>
-            <rect x="14" y="28" width="22" height="14" rx="3" fill="#0d0d18" stroke="rgba(201,147,58,0.18)" stroke-width="1"/>
-            <!-- Moving head centre -->
-            <rect x="97" y="84" width="46" height="22" rx="5" fill="#13131f" stroke="rgba(150,80,255,0.4)" stroke-width="1.5"/>
-            <rect x="105" y="106" width="30" height="10" rx="3" fill="#0d0d18" stroke="rgba(150,80,255,0.25)" stroke-width="1"/>
-            <ellipse cx="120" cy="72" rx="24" ry="20" fill="#0d0d18" stroke="rgba(150,80,255,0.5)" stroke-width="1.5"/>
-            <circle cx="120" cy="62"  r="4" fill="rgba(200,120,255,0.9)"/>
-            <circle cx="110" cy="68"  r="4" fill="rgba(80,140,255,0.9)"/>
-            <circle cx="130" cy="68"  r="4" fill="rgba(255,80,180,0.9)"/>
-            <circle cx="111" cy="79"  r="4" fill="rgba(80,255,180,0.9)"/>
-            <circle cx="129" cy="79"  r="4" fill="rgba(255,210,60,0.9)"/>
-            <circle cx="120" cy="84"  r="4" fill="rgba(150,80,255,0.9)"/>
-            <!-- Beams from moving head -->
-            <line x1="104" y1="52" x2="70"  y2="8"  stroke="rgba(200,120,255,0.15)" stroke-width="10" stroke-linecap="round"/>
-            <line x1="120" y1="52" x2="120" y2="4"  stroke="rgba(255,255,255,0.1)"  stroke-width="8"  stroke-linecap="round"/>
-            <line x1="136" y1="52" x2="170" y2="8"  stroke="rgba(255,80,180,0.15)"  stroke-width="10" stroke-linecap="round"/>
-            <!-- Fogger right -->
-            <rect x="180" y="50" width="72" height="46" rx="6" fill="#15151f" stroke="rgba(80,180,255,0.35)" stroke-width="1.5"/>
-            <rect x="180" y="62" width="8"  height="22" rx="3" fill="#0d0d18" stroke="rgba(80,180,255,0.2)" stroke-width="1"/>
-            <circle cx="243" cy="73" r="16" fill="#0d0d18" stroke="rgba(80,180,255,0.3)" stroke-width="1.5"/>
-            <circle cx="243" cy="73" r="9"  fill="#080810" stroke="rgba(80,180,255,0.2)" stroke-width="1"/>
-            <circle cx="190" cy="60" r="4"  fill="rgba(80,180,255,0.7)"/>
-            <circle cx="190" cy="86" r="4"  fill="rgba(100,255,220,0.7)"/>
-            <circle cx="200" cy="73" r="4"  fill="rgba(150,80,255,0.7)"/>
-            <!-- Fog stream -->
-            <ellipse cx="252" cy="73" rx="18" ry="7" fill="rgba(255,255,255,0.06)"/>
-            <ellipse cx="258" cy="73" rx="10" ry="4" fill="rgba(255,255,255,0.04)"/>
-          </svg>
+
+        <div class="card-body">
+          <h3 class="card-title">Pacchetto Completo</h3>
+          <p class="card-desc">Audio + Luci + Fumo: tutto quello che serve per una serata indimenticabile.</p>
+          <div class="card-price">
+            <span class="price-val text-gold">150 €</span>
+            <span class="price-lbl">per una serata</span>
+          </div>
+          <ul class="card-includes">
+            <li class="inc-item"><span class="inc-check">✓</span> 2× Casse RCF Art 712-A MK (1400W)</li>
+            <li class="inc-item"><span class="inc-check">✓</span> 2× Moving head LED RGBW</li>
+            <li class="inc-item"><span class="inc-check">✓</span> Macchina del fumo 1200W con LED</li>
+            <li class="inc-item"><span class="inc-check">✓</span> <strong>Risparmio di 20€</strong> rispetto al totale</li>
+            <li class="inc-item"><span class="inc-check">✓</span> Supporto telefonico dedicato</li>
+          </ul>
+          <a href="#contatti" class="card-btn">Richiedi informazioni</a>
         </div>
+      </div>
 
     </div>
     <p style="text-align:center;font-size:13px;color:var(--text-500);margin-top:24px;">* Prezzi indicativi. Il preventivo definitivo può variare in base a luogo e distanza.</p>
